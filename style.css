@@ -867,17 +867,28 @@
             /* Ajuste para o botão flutuante */
             .floating-heart {
                 bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
+                left: 20px;  /* Mudei de right para left */
+                right: auto;
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
             }
+
 
             /* Ajuste para a mensagem secreta */
             .secret-message {
-                bottom: 80px;
-                right: 10px;
+                bottom: 75px;
+                left: 20px;  /* Alinhado com o botão */
+                right: auto;
                 max-width: 200px;
+                transform-origin: left bottom;  /* Faz a mensagem "nascer" do botão */
+            }
+
+            .secret-message::before {
+                left: 25px;  /* Ajuste da setinha */
+                right: auto;
+                border-width: 15px 15px 0 0;
+                border-color: #ffe4e1 transparent transparent transparent;
             }
         }
 
@@ -896,5 +907,18 @@
             .secret-message {
                 bottom: 70px;
                 max-width: 180px;
+            }
+            .floating-heart {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                left: 15px;
+            }
+
+            .secret-message {
+                bottom: 70px;
+                left: 15px;
+                max-width: 180px;
+                font-size: 0.9rem;
             }
         }
