@@ -834,61 +834,26 @@
         }
 
         @media (max-width: 768px) {
-        /* Ajuste para o player de música em mobile */
-            #music-player {
-                bottom: 70px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 90%;
-                max-width: 350px;
-                flex-direction: column;
-                align-items: center;
-                padding: 15px;
-                border-radius: 25px;
-                gap: 10px;
-            }
-
-            #music-player button {
-                order: 1; /* Coloca o botão de play primeiro */
-            }
-
-            #music-info {
-                order: 2; /* Informação da música em segundo */
-                max-width: 100%;
-                text-align: center;
-            }
-
-            #volume-control {
-                order: 3; /* Controle de volume por último */
-                width: 80%;
-                margin-top: 5px;
-            }
-
-            /* Ajuste para o botão flutuante */
             .floating-heart {
-                bottom: 20px;
-                left: 20px;  /* Mudei de right para left */
-                right: auto;
-                width: 45px;
-                height: 45px;
-                font-size: 18px;
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 16px !important;
+                bottom: 15px !important;
+                right: 15px !important;
             }
 
-
-            /* Ajuste para a mensagem secreta */
             .secret-message {
-                bottom: 75px;
-                left: 20px;  /* Alinhado com o botão */
-                right: auto;
-                max-width: 200px;
-                transform-origin: left bottom;  /* Faz a mensagem "nascer" do botão */
+                bottom: 65px !important;
+                right: 15px !important;
+                max-width: 160px !important;
+                font-size: 0.8rem !important;
+                padding: 10px !important;
             }
 
             .secret-message::before {
-                left: 25px;  /* Ajuste da setinha */
-                right: auto;
-                border-width: 15px 15px 0 0;
-                border-color: #ffe4e1 transparent transparent transparent;
+                right: 15px !important;
+                bottom: -10px !important;
+                border-width: 10px 10px 0 10px !important;
             }
         }
 
