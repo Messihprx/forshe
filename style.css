@@ -1,0 +1,834 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --rosa-claro: #ffd6e7;
+            --rosa: #ff85a2;
+            --rosa-escuro: #ff467e;
+            --roxo: #c86bfa;
+            --roxo-escuro: #8a2be2;
+            --branco: #ffffff;
+            --preto: #333333;
+            --sombra: rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--rosa-claro), var(--roxo));
+            color: var(--preto);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        /* Efeito de corações flutuantes */
+        .heart {
+            position: fixed;
+            color: var(--rosa-escuro);
+            font-size: 16px;
+            opacity: 0;
+            z-index: 0;
+            animation: float 6s ease-in infinite;
+            bottom: -50px;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+                bottom: -50px;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+                bottom: 100vh;
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Header romântico */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--sombra);
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: var(--rosa-escuro);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--roxo-escuro);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        /* Estilo para a foto do casal */
+        .couple-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 5px solid var(--branco);
+            box-shadow: 0 15px 30px rgba(202, 107, 250, 0.4);
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        
+        .couple-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(202, 107, 250, 0.6);
+        }
+        
+        .couple-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .couple-photo:hover img {
+            transform: scale(1.1);
+        }
+        
+        .photo-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.8);
+            pointer-events: none;
+        }
+        
+        /* Contador de tempo */
+        .counter {
+            background: linear-gradient(45deg, var(--rosa-escuro), var(--roxo-escuro));
+            color: var(--branco);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        
+        .counter-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .counter-numbers {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .counter-item {
+            text-align: center;
+        }
+        
+        .counter-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        .counter-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Seções */
+        section {
+            padding: 60px 20px;
+            margin: 30px 0;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--sombra);
+        }
+        
+        section h2 {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--rosa-escuro);
+            margin-bottom: 40px;
+        }
+        
+        /* Linha do tempo */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--rosa);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 40px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            background: var(--branco);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--sombra);
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: -15px;
+            border-width: 8px 0 8px 15px;
+            border-style: solid;
+            border-color: transparent transparent transparent var(--branco);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -15px;
+            right: auto;
+            border-width: 8px 15px 8px 0;
+            border-color: transparent var(--branco) transparent transparent;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--rosa-escuro);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-desc {
+            margin-bottom: 15px;
+        }
+        
+        /* Jardim de flores */
+        .garden {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .flower {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .flower:hover {
+            transform: translateY(-10px);
+        }
+        
+        .flower-icon {
+            font-size: 3.5rem;
+            color: var(--rosa-escuro);
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .flower:hover .flower-icon {
+            color: var(--roxo-escuro);
+            transform: scale(1.1);
+        }
+        
+        .flower-name {
+            font-weight: bold;
+            color: var(--roxo-escuro);
+        }
+        
+        /* Mapa de memórias */
+        .memory-map {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .memory-row {
+            display: contents;
+        }
+        
+        .memory-card {
+            background: var(--branco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--sombra);
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .memory-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(202, 107, 250, 0.5);
+        }
+        
+        .memory-img {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .memory-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .memory-card:hover .memory-img img {
+            transform: scale(1.1);
+        }
+
+        .beach .memory-img img {
+            object-position: center 30%;
+        }
+        
+        .mountain .memory-img img {
+            object-position: center 60%;
+        }
+        
+        .theater .memory-img img {
+            object-position: center 40%;
+        }
+        
+        .park .memory-img img {
+            object-position: center 50%;
+        }
+        
+        .restaurant .memory-img img {
+            object-position: center 40%;
+        }
+        
+        .waterfall .memory-img img {
+            object-position: center 30%;
+        }
+        
+        .memory-content {
+            padding: 15px;
+        }
+        
+        .memory-title {
+            color: var(--rosa-escuro);
+            margin-bottom: 10px;
+        }
+        
+        /* Carta de amor */
+         .love-letter {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            perspective: 1000px;
+            height: 400px;
+        }
+        
+        .envelope-container {
+            position: relative;
+            width: 350px;
+            height: 250px;
+            margin: 0 auto;
+        }
+        
+        .envelope {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--rosa);
+            border-radius: 10px;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.6s ease;
+            box-shadow: 0 10px 20px var(--sombra);
+            cursor: pointer;
+            transform-origin: bottom;
+        }
+        
+        .envelope::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20px;
+            background: var(--rosa-escuro);
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .envelope i {
+            font-size: 4rem;
+            color: var(--branco);
+            transition: transform 0.3s ease;
+        }
+        
+        .envelope:hover i {
+            transform: scale(1.2);
+        }
+        
+        .letter {
+            position: absolute;
+            width: 400px;
+            height: 330px;
+            background: var(--branco);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 2;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .letter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-width: 0 30px 30px 0;
+            border-style: solid;
+            border-color: transparent #f8f8f8 transparent transparent;
+        }
+        
+        .letter-content {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            height: 100%;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .letter-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--rosa-escuro);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .letter p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        
+        /* Estado aberto */
+        .open .envelope {
+            transform: translateY(-100px) rotateX(180deg);
+            z-index: 1;
+        }
+        
+        .open .letter {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-250px);
+            pointer-events: auto;
+            z-index: 4;
+        }
+        
+        .open .letter-content {
+            opacity: 1;
+        }
+        
+        /* Barra de rolagem personalizada */
+        .letter-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .letter-content::-webkit-scrollbar-thumb {
+            background: var(--rosa);
+            border-radius: 3px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--branco);
+            background: rgba(0, 0, 0, 0.2);
+            margin-top: 60px;
+        }
+        
+        .footer-heart {
+            color: var(--rosa-escuro);
+            animation: heartbeat 1.2s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
+        
+        /* Botão flutuante de amor */
+        .floating-heart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--rosa-escuro);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* MENSAGEM SECRETA CORRIGIDA */
+        .secret-message {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 70, 126, 0.3);
+            max-width: 250px;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 99;
+            border: 2px solid var(--rosa);
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            border-left: 5px solid var(--rosa-escuro);
+        }
+        
+        .secret-message::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: 25px;
+            border-width: 15px 15px 0 15px;
+            border-style: solid;
+            border-color: #ffe4e1 transparent transparent transparent;
+        }
+        
+        .secret-message.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .secret-message p {
+            font-size: 1.2rem;
+            color: var(--roxo-escuro);
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+        
+        .secret-message .signature {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            color: var(--rosa-escuro);
+            margin-top: 10px;
+            text-align: right;
+            font-style: italic;
+        }
+        
+        .secret-heart {
+            color: var(--rosa-escuro);
+            font-size: 1.2rem;
+            margin: 0 3px;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        /* Player de música no lado esquerdo */
+        #music-player {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50px;
+            padding: 12px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            border: 2px solid #e91e63;
+            transition: transform 0.3s ease;
+        }
+        
+        #music-player:hover {
+            transform: scale(1.05);
+        }
+        
+        #music-player button {
+            background: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        #music-player button:hover {
+            background: #c2185b;
+            transform: rotate(10deg);
+        }
+        
+        #music-player button i {
+            font-size: 18px;
+        }
+        
+        #music-info {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: #333;
+            max-width: 180px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 500;
+        }
+        
+        #volume-control {
+            width: 90px;
+            accent-color: #e91e63;
+        }
+        
+        /* Popup de permissão de música */
+        #music-permission {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+        }
+        
+        .permission-box {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .permission-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #ffafbd);
+        }
+        
+        .permission-box h3 {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .permission-box p {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        .permission-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .permission-btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        #allow-music {
+            background: white;
+            color: #e91e63;
+        }
+        
+        #allow-music:hover {
+            background: #f8f8f8;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        #decline-music {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        #decline-music:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Animação do ícone musical */
+        .music-note {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0;
+            color: #e91e63;
+            z-index: 1001;
+        }
+        
+        @keyframes floatNote {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            section h2 { font-size: 2.5rem; }
+            
+            .timeline::before { left: 30px; }
+            .timeline-item { width: 100%; left: 0 !important; padding-left: 70px; padding-right: 20px; }
+            .timeline-content::before { left: -15px !important; right: auto; border-width: 8px 15px 8px 0; border-color: transparent var(--branco) transparent transparent; }
+            
+            .couple-photo {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .memory-map {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            #music-player {
+                bottom: 70px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                max-width: 350px;
+            }
+            
+            /* Ajustes para mensagem secreta em mobile */
+            .secret-message {
+                max-width: 200px;
+                padding: 12px;
+                right: 10px;
+            }
+            
+            .secret-message p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .memory-map {
+                grid-template-columns: 1fr;
+            }
+            
+            .secret-message {
+                max-width: 180px;
+                padding: 10px;
+                bottom: 80px;
+            }
+        }
+        .heart1 {
+            left: 10%;
+            animation-delay: 0s;
+            color: var(--rosa-escuro);
+        }
+        .letter .letter-content h3{
+            font-size: 0.5rem;
+            font-family: 'Petit Formal Script', cursive;
+            color: var(--rosa-escuro);
+            margin-bottom: 15px;
+            text-align: left;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .ETA {
+            color: var(--rosa-escuro);
+            background: linear-gradient(90deg, #ccff00, #8e2de2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text; /* para compatibilidade */
+            color: transparent;
+        }

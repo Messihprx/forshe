@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Amor por Você</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Corações flutuantes -->
+    <div id="hearts-container"></div>
+
+    <!-- Player de música -->
+    <div id="music-player" style="display: none;">
+        <button id="play-pause-btn">
+            <i class="fas fa-play"></i>
+        </button>
+        <div id="music-info">Minha felicidade</div>
+        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.7">
+    </div>
+    
+    <!-- Popup de permissão para tocar música -->
+    <div id="music-permission">
+        <div class="permission-box">
+            <h3>Uma surpresa musical para você!</h3>
+            <p>Gostaria de ouvir uma música especial enquanto navega por esta página de amor?</p>
+            <div class="permission-buttons">
+                <button id="allow-music" class="permission-btn">Sim, por favor!</button>
+                <button id="decline-music" class="permission-btn">Não, obrigada</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Feliz dia dos Namorados</h1>
+                <p class="subtitle">Te amar é o maior prazer q eu pude ter</p>
+                
+                <!-- Área para sua foto -->
+                <div class="couple-photo">
+                    <!-- Substitua o src pela URL da sua imagem -->
+                    <img src="imagens/hk.jpg" alt="Nossa foto">
+                    <div class="photo-frame"></div>
+                </div>
+                
+                <div class="counter">
+                    <div class="counter-title">Tempo do nosso amor</div>
+                    <div class="counter-numbers">
+                        <div class="counter-item">
+                            <div class="counter-value" id="days">365</div>
+                            <div class="counter-label">Dias</div>
+                        </div>
+                        <div class="counter-item">
+                            <div class="counter-value" id="hours">8</div>
+                            <div class="counter-label">Horas</div>
+                        </div>
+                        <div class="counter-item">
+                            <div class="counter-value" id="minutes">45</div>
+                            <div class="counter-label">Minutos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <section id="timeline">
+            <h2>Nossa História</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">25 de Novembro, 2024</div>
+                        <div class="timeline-desc">Nossa primeira interação, ali éramos 2 estranhos um pro outro, entrei no sv da eternity aleatoriamente praticamente, e troquei as primeiras mensagens com vc, e como eu disse, éramos 2 estranhos. Lembro até hj de tu me zuando de eu ser zoófilo pq eu tinha falado algo de duplo sentido, esse teu jeitin nunca mudou KKKKKKKKKKK gosta pouco de zuar. E eu lembro tbm de ngm ter acreditado q eu tinha 11 anos quando eu falei</div>
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">23 de Janeiro, 2025</div>
+                        <div class="timeline-desc">Nossa primeira interação no privado durante a era Tek, onde a gnt ficou beeeem mais próximos, começamos a se entender, um fazia o outro rir, e a conexão só crescia, foi o começo mesmo do nosso amor. Quem diria que o Tek seria o fator para o nosso início KKKKKKKK</div>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">3 de Fevereiro, 2025</div>
+                        <div class="timeline-desc">A data que damos pro começo do nosso namoro, onde começamos a namorar. Como ngm tinha pedido ngm em namoro, não era um namoro oficial, então vc me pediu em namoro e essa virou a data oficial do nosso namoro. </div>
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Hoje</div>
+                        <div class="timeline-desc">E hoje somos oq somos hj, 2 pessoas que querem um futuro juntos. Não vou dizer q foi algo perfeito pq teve complicações, mas foi necessários para evoluirmos junto, ambos melhoramos juntos, e eu estou muito satisfeito com oq temos. E acima de tudo, eu te amo muito.</div>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="garden">
+            <h2>Jardim do Nosso Amor</h2>
+            <div class="garden">
+                <div class="flower" onclick="showMessage('Seu sorriso é o brilho mais intenso que eu pude presenciar.')">
+                    <div class="flower-icon"><i class="fas fa-sun"></i></div>
+                    <div class="flower-name">Seu Sorriso</div>
+                </div>
+                <div class="flower" onclick="showMessage('Seu jeitinho me conquista a cada dia.')">
+                    <div class="flower-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <div class="flower-name">Seu Jeitinho</div>
+                </div>
+                <div class="flower" onclick="showMessage('Seus olhos são os mais vívidos e lindos que já vi, eu amo seus olhinhos maravilhosos.')">
+                    <div class="flower-icon"><i class="fas fa-eye"></i></div>
+                    <div class="flower-name">Seu Olhar</div>
+                </div>
+                <div class="flower" onclick="showMessage('Sua presença me faz feliz e me completa.')">
+                    <div class="flower-icon"><i class="fas fa-hands"></i></div>
+                    <div class="flower-name">Sua Presença</div>
+                </div>
+                <div class="flower" onclick="showMessage('Sua risada é a melodia mais linda que já ouvi, ela me cativa, me contagia, e além disso, sua risada é muito fofa.')">
+                    <div class="flower-icon"><i class="fas fa-music"></i></div>
+                    <div class="flower-name">Seu Riso</div>
+                </div>
+                <div class="flower" onclick="showMessage('Seu apoio me torna mais forte.')">
+                    <div class="flower-icon"><i class="fas fa-hands-helping"></i></div>
+                    <div class="flower-name">Seu Apoio</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="memories">
+        <h2>Nossos Momentos Especiais</h2>
+        <div class="memory-map">
+            <!-- Primeira linha com 3 cartões -->
+            <div class="memory-card beach">
+                <div class="memory-img">
+                    <img src="imagens/1.png" alt="Praia do Sol">
+                </div>
+                <div class="memory-content">
+                    <h3 class="memory-title">Primeira Vez no Catálogo Juntos</h3>
+                    <p>Essa imagem é especial pelo fato de ser a nossa primeira vez juntos no catálogo, foi um momento especial e merece ser registrado.</p>
+                </div>
+            </div>
+            
+            <div class="memory-card mountain">
+                <div class="memory-img">
+                    <img src="imagens/2.png" alt="Montanha Azul">
+                </div>
+                <div class="memory-content">
+                    <h3 class="memory-title">Primeira Metadinha juntos</h3>
+                    <p>Essa foto tbm é especial pelo fato de ter sido nossa primeira metadinha juntos, é especial.</p>
+                </div>
+            </div>
+            
+            <div class="memory-card theater">
+                <div class="memory-img">
+                    <img src="imagens/3.png" alt="Teatro Municipal">
+                </div>
+                <div class="memory-content">
+                    <h3 class="memory-title">Jogando Bloxburg</h3>
+                    <p>Esse daq eu tenho q registrar, eu amei muito esse dia, eu ri muito, foi muito foda e divertido, queria dnv.</p>
+                </div>
+            </div>
+            
+            <!-- Segunda linha com 3 cartões -->
+            <div class="memory-card park">
+                <div class="memory-img">
+                    <img src="imagens/4.png" alt="Parque Central">
+                </div>
+                <div class="memory-content">
+                    <h3 class="memory-title">Jogatina</h3>
+                    <p>De verdade não me lembro se isso foi num dia de muita jogatina, mas essa foto está aq para representar os dias q jogamos juntos antes, e também a nossa primeira roupinha combinando.</p>
+                </div>
+            </div>
+            
+            <div class="memory-card restaurant">
+                <div class="memory-img">
+                    <img src="imagens/5.png" alt="Restaurante Italiano">
+                </div>
+                <div class="memory-content">
+                    <h3 class="memory-title">Coisinhas Nossas</h3>
+                    <p>Essa está aq pra representar todas as coisinhas que um fez pro outro, inclusive ela ta ai pq eu adorei muito essa página do album q eu fiz, nao vou deixar passar sem registrar. Continuando, ela está para representar tudo q um fez pro outro, seja seus poemas, seja minhas edits, tudo.</p>
+                </div>
+            </div>
+            
+            <div class="memory-card waterfall">
+                <div class="memory-img">
+                    <img src="imagens/6.png" alt="Cachoeira">
+                </div>
+                <div class="memory-content">
+                    <h3 class="memory-title">Atualmente</h3>
+                    <p>E essa foto está para reprentar a atualidade, os joguinhos q a gnt joga junto, as roupa combinando q a gnt usa juntos, nossos momentos juntos, enfim, tudo q fazemos juntos hj em dia <span class="heart1">❤</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+        <section id="letter">
+        <h2>Minha Carta para Você</h2>
+        <div class="love-letter">
+            <div class="envelope-container">
+                <div class="envelope" id="envelope">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="letter">
+                    <div class="letter-content">
+                        <h3 class="letter-title">Para Meu Amorzinho</h3>
+                        <p>Minha sinhora, já se passaram mais de 4 meses, eu to mt feliz com nós, fiz essa cartinha com uma frase e com ALERT SPOILER >> um poeminha pra vose.
+                            o tempo passou rápido dms e eu consegui aproveitar cada momentinho ao seu lado, cada sorrisin seu, cada risada q vc me tirou, cada tempin q vc tirou para ficar cmg, eu sou mt grato por ter vc, por tudo q vc fez por mim, e quero q nosso relacionamento só evolua, q a gnt continue junto pelo maior tempo possivel, q algum dia possamos nos encontrar, possamos morar juntos, casar, tenho mts planos com vc pro futuro. Provavelmente não vamos poder passar o dia juntos mas terá outro dia para comemorarmos juntos. Fica com o poema q eu fiz pra você, espero que goste, eu fiz com muito carinho e amor, e espero que transmita tudo q eu sinto por você. Eu to enferrujado e sem criatividade pra fazer poema, mas vou tentar, acho q é oq importa</p>
+                        </p>
+
+                        <h1>Gratidão</h1>
+                        <h3 class="letter-poem">
+                            <p>O tempo... O tempo passa o tempo voa,<br>
+                            <p>E eu percebi que com você a vida é boa.<br>
+                            <p>Cada risada, o seu jeitinho, o seu olhar,<br>
+                            <p>São nesses detalhes que meu coração tende a morar.</p><br>
+                            <p>Meu coração acelera com sua presença,<br>
+                            <p>Você é tipo uma deusa, contagia com sua essência.<br>
+                            <p>Como diz uma certa musica, meu melhor amigo é o meu amor,<br>
+                            <p>E como complemento, com você a vida tem mais humor.</p><br>
+                            <p>Você é a razão do meu sorriso, minha alegria,<br>
+                            <p>Com você, cada dia é uma doce melodia.<br>
+                            <p>Te amo mais que tudo, minha linda nandinha,<br>
+                            <p>Você é meu sol, minha estrela, minha rainha.</p> <br>
+                            <p>As noites com você brilham muito mais,<br>
+                            <p>Talvez seja seus olhinhos, a noite brilhar mais? incapaz.<br>
+                            <p>Tenho tanto a dizer, mas não sei escrever,<br>
+                            <p>Portanto então, eu te amo além da mão, amo com coração.</p><br>
+                            <p>Por mais que eu tente, não conseguirei descrever meu amor por vc,<br>
+                            <p>Até pq, ele é além doq até eu mesmo sei.<br>
+                            <p>Mas oq eu sei é que eu vou continuar te amando<br>
+                            <p>Termino esse conto, com um profundo <span class="ETA">Eu te amo</span></p>
+                            
+                        </h3>
+                        
+                        <p>Com todo meu amor,<br>Messi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Feito com muito <i class="fas fa-heart footer-heart"></i> para você, minha nandinha!</p>
+        <p>Feliz Dia dos Namorados! Sou completamente seu.</p>
+        <p>made by Messi</p>
+    </footer>
+    
+    <!-- Botão flutuante de amor -->
+    <div class="floating-heart" id="loveButton">
+        <i class="fas fa-heart"></i>
+    </div>
+    
+    <!-- Mensagem secreta -->
+    <div class="secret-message" id="secretMessage">
+        <p>Você é a melhor coisa <i class="secret-heart">❤</i> que já aconteceu na minha vida!</p>
+        <p class="signature">JACKPOT! BIG WIN 🌟</p>
+    </div>
+
+    <script>
+         // Elementos de música
+        const musicPermission = document.getElementById('music-permission');
+        const musicPlayer = document.getElementById('music-player');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const volumeControl = document.getElementById('volume-control');
+        const musicInfo = document.getElementById('music-info');
+        
+        // Criar elemento de áudio
+        const backgroundMusic = new Audio();
+        // Usando uma música romântica de domínio público
+        backgroundMusic.src = 'imagens/musica.mp3';
+        backgroundMusic.loop = true;
+        
+        // Verificar se o usuário já deu permissão anteriormente
+        const musicAllowed = localStorage.getItem('musicAllowed');
+        
+        // Se já tiver permissão, tocar música diretamente
+        if (musicAllowed === 'true') {
+            musicPermission.style.display = 'none';
+            musicPlayer.style.display = 'flex';
+            backgroundMusic.play().catch(e => console.log('Autoplay bloqueado:', e));
+        } else {
+            musicPermission.style.display = 'flex';
+        }
+        
+        // Evento para permitir música
+        document.getElementById('allow-music').addEventListener('click', function() {
+            musicPermission.style.display = 'none';
+            musicPlayer.style.display = 'flex';
+            localStorage.setItem('musicAllowed', 'true');
+            
+            // Tentar tocar música
+            backgroundMusic.play().catch(e => {
+                console.log('Falha ao tocar música:', e);
+                // Se falhar, mostrar botão para tocar manualmente
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            });
+        });
+        
+        // Evento para recusar música
+        document.getElementById('decline-music').addEventListener('click', function() {
+            musicPermission.style.display = 'none';
+            localStorage.setItem('musicAllowed', 'false');
+        });
+        
+        // Controle de play/pause
+        playPauseBtn.addEventListener('click', function() {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                createMusicNote();
+            } else {
+                backgroundMusic.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+        
+        // Controle de volume
+        volumeControl.addEventListener('input', function() {
+            backgroundMusic.volume = volumeControl.value;
+        });
+        
+        // Atualizar ícone quando a música terminar
+        backgroundMusic.addEventListener('ended', function() {
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        });
+        
+        // Atualizar ícone quando a música pausar
+        backgroundMusic.addEventListener('pause', function() {
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        });
+        
+        // Atualizar ícone quando a música tocar
+        backgroundMusic.addEventListener('play', function() {
+            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        });
+        
+        // Criar nota musical flutuante
+        function createMusicNote() {
+            const note = document.createElement('div');
+            note.innerHTML = '<i class="fas fa-music"></i>';
+            note.classList.add('music-note');
+            
+            // Posicionar próximo ao botão de play
+            const rect = playPauseBtn.getBoundingClientRect();
+            note.style.left = (rect.left + rect.width/2) + 'px';
+            note.style.top = (rect.top + rect.height/2) + 'px';
+            
+            document.body.appendChild(note);
+            
+            // Animação
+            note.style.animation = 'floatNote 2s forwards';
+            
+            // Remover após animação
+            setTimeout(() => {
+                note.remove();
+            }, 2000);
+        }
+        
+        // Criar corações flutuantes
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartCount = 100;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤';
+                
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                heart.style.animationDuration = (Math.random() * 5 + 3) + 's';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Criar corações flutuantes - AJUSTADO PARA FUNCIONAR EM TODA A TELA
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartCount = 100; // Mais corações para preencher a tela
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤';
+                
+                // Posição horizontal aleatória
+                heart.style.left = Math.random() * 100 + 'vw';
+                // Tamanho aleatório
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                // Duração e delay aleatórios
+                heart.style.animationDuration = (Math.random() * 5 + 3) + 's';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Atualizar contador
+        function updateCounter() {
+            // Data do primeiro encontro (altere para a data real)
+            const firstDate = new Date('2025-02-03');
+            const now = new Date();
+            
+            // Calcular diferença
+            const diff = now - firstDate;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            
+            // Atualizar elementos
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+        }
+        
+        // Mostrar mensagem quando clicar em uma flor
+        function showMessage(message) {
+            alert(message);
+        }
+        
+        // Abrir carta de amor
+         document.getElementById('envelope').addEventListener('click', function() {
+            const envelopeContainer = this.closest('.envelope-container');
+            envelopeContainer.classList.toggle('open');
+            
+            // Fechar a carta se clicar fora dela
+            document.addEventListener('click', function closeLetter(e) {
+                const letter = document.querySelector('.letter');
+                if (envelopeContainer.classList.contains('open') && 
+                    !envelopeContainer.contains(e.target)) {
+                    envelopeContainer.classList.remove('open');
+                    document.removeEventListener('click', closeLetter);
+                }
+            });
+        });
+        
+        // Botão flutuante de amor
+        document.getElementById('loveButton').addEventListener('click', function() {
+            const message = document.getElementById('secretMessage');
+            message.classList.toggle('show');
+            
+            // Esconder a mensagem após alguns segundos
+            setTimeout(() => {
+                message.classList.remove('show');
+            }, 5000);
+        });
+        
+        // Inicializar
+        window.onload = function() {
+            createHearts();
+            updateCounter();
+            // Atualizar contador a cada minuto
+            setInterval(updateCounter, 60000);
+            // Tentar tocar música se já tiver permissão
+            if (musicAllowed === 'true') {
+                backgroundMusic.play().catch(e => {
+                    console.log('Falha ao tocar música:', e);
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                });
+            }
+        };
+    </script>
+</body>
+</html>
